@@ -72,7 +72,14 @@ $("#header").prepend(formattedRole).prepend(formattedName);
 var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
 var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
 var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
-$("#topContacts").prepend(formattedMobile).prepend(formattedEmail).prepend(formattedGithub);
+var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
+var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
+var formattedPic = HTMLbioPic.replace("%data%", bio.biopic);
+
+var formattedWelcomeMsg = HTMLWelcomeMsg.replace("%data%", bio.welcomeMessage);
+
+$("#topContacts").append(formattedMobile).append(formattedEmail).append(formattedGithub).append(formattedTwitter).append(formattedLocation);
+$(".clear").append(formattedPic).append(formattedWelcomeMsg);
 
 
 for(job in work.jobs){
