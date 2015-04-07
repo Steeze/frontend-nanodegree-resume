@@ -79,11 +79,13 @@ var formattedPic = HTMLbioPic.replace("%data%", bio.biopic);
 var formattedWelcomeMsg = HTMLWelcomeMsg.replace("%data%", bio.welcomeMessage);
 
 $("#topContacts").append(formattedMobile).append(formattedEmail).append(formattedGithub).append(formattedTwitter).append(formattedLocation);
-$(".clear").append(formattedPic).append(formattedWelcomeMsg);
+$("#topContacts").next().append(formattedPic).append(formattedWelcomeMsg);
 
 
-for(job in work.jobs){
+for(var job in work.jobs) {
+
     $("#workExperience").append(HTMLworkStart);
+
     var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
     var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
     var formattedEmployerTitle = formattedEmployer + formattedTitle;
@@ -92,7 +94,31 @@ for(job in work.jobs){
     var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
     $(".work-entry:last").append(formattedDates);
 
-    var formattedDescription = HTMLworkDescription("%data%", work.jobs[job].description);
+    var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
     $(".work-entry:last").append(formattedDescription);
+
+    var formattedWorkLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
+    $(".work-entry:last").append(formattedWorkLocation);
 }
+
+for(var project in projects.projects) {
+
+    $("#projects").append(HTMLprojectStart);
+
+    var formattedProjectTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
+    $(".project-entry:last").append(formattedProjectTitle);
+
+    var formattedProjectDates = HTMLprojectDates.replace("%data%", projects.projects[project].dates);
+    $(".project-entry:last").append(formattedProjectDates);
+
+    var formattedProjectDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
+    $(".project-entry:last").append(formattedProjectDescription);
+
+    var formattedProjectImage = HTMLprojectImage.replace("%data%", projects.projects[project].images);
+    $(".project-entry:last").append(formattedProjectImage);
+}
+
+
+
+
 
