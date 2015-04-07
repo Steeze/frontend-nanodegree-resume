@@ -59,7 +59,13 @@ var projects = {
         "title": "mploir",
         "dates": "02/01/2015,03/01/2015",
         "description": "building the future of unemployment",
-        "images": "array with string urls"
+        "images": "http://lorempixel.com/400/100/",
+        },
+        {
+            "title": "Small Business Enviromental Home Page",
+            "dates": "08/01/2008,12/01/2013",
+            "description": "Enviromental information for small businesses ",
+            "images": "http://lorempixel.com/400/100/"
         }],
     display: function(){}
 };
@@ -118,7 +124,26 @@ for(var project in projects.projects) {
     $(".project-entry:last").append(formattedProjectImage);
 }
 
+for (var school in education.schools) {
 
+    $("#education").append(HTMLschoolStart);
+
+    var formattedEducation = HTMLschoolName.replace("%data%", education.schools[school].name);
+    $(".education-entry:last").append(formattedEducation);
+
+    var formattedEducationDegree = HTMLschoolDegree.replace("%data%", education.schools[school].degree);
+    $(".education-entry:last").append(formattedEducationDegree);
+
+    var formattedEducationDates = HTMLschoolDates.replace("%data%", education.schools[school].dates);
+    $(".education-entry:last").append(formattedEducationDates);
+
+    var formattedSchoolLocation = HTMLschoolLocation.replace("%data%", education.schools[school].location);
+    $(".education-entry:last").append(formattedSchoolLocation);
+
+    var formattedSchoolMajor = HTMLschoolMajor.replace("%data%", education.schools[school].majors);
+    $(".education-entry:last").append(formattedSchoolMajor);
+
+}
 
 
 
