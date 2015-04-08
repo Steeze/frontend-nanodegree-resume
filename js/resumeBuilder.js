@@ -10,19 +10,18 @@ var bio = {
         "twitter": "@ErichSchutz",
         "location": "Pittsburgh, Pa"
         },
-        "welcomeMessage": "Yo Yo Yo",
-        "skills": ["JavaScript", "C#", "Codes"],
-        "biopic": "images/fry.jpg",
-        display: function(){}
+        "welcomeMessage": "Do you see any Teletubbies in here?",
+        "skills": ["C#", "Code Slinging", "Getting Rad", "Eating Pancakes"],
+        "biopic": "images/fry.jpg"
 };
 
 var education = {
     "schools": [{
         "name": "University Of Pittsburgh",
         "location": "Pittsburgh, Pa",
-        "degree": "Computer Science",
-        "majors": ["Psychology", "Information Science"],
-        "dates": "2001",
+        "degree": "Bachelor of Science",
+        "majors": ["Computer Science"],
+        "dates": "1995 - 2001",
         "url": "http://www.pitt.edu/"
       }],
     "onlineCourses": [{
@@ -30,44 +29,63 @@ var education = {
         "school": "Udacity",
         "date": "2015",
         "url": "www.udacity.com"
-        }],
-        display: function(){}
+        }]
 };
 
 var work = {
     "jobs": [
         {
-            "employer": "Concurrent Technology Corporation",
-            "title": "Software Engineer",
-            "location": "Seattle, Wa",
-            "dates": "01/01/01,12/12/12",
-            "description": "DOD contractor"
-        },
-        {
             "employer": "Aesynt, Inc",
             "title": "Software Engineer",
             "location": "Pittsburgh, Pa",
-            "dates": "12/12/12,04/12/15",
-            "description": "Code Slinger"
+            "dates": "12/12/12 - Future",
+            "description": "Small batch 8-bit wayfarers church-key Intelligentsia next level Wes Anderson. " +
+            "American Apparel try-hard taxidermy quinoa direct trade, irony semiotics four loko. Tilde brunch " +
+            "iPhone, slow-carb tote bag literally pickled mustache. Dreamcatcher cardigan meh, beard forage yr " +
+            "McSweeney's squid. Banksy deep v church-key chia 90's slow-carb fixie Kickstarter YOLO keffiyeh pour-over, " +
+            "crucifix chambray forage cardigan. Helvetica slow-carb bicycle rights, artisan cred scenester before they sold out " +
+            "food truck Portland four loko banjo chambray. Plaid dreamcatcher  freegan flexitarian +1."
+        },
+        {
+            "employer": "Concurrent Technology Corporation",
+            "title": "Software Engineer",
+            "location": "Seattle, Wa",
+            "dates": "01/01/01 - 12/12/12",
+            "description": "Helvetica squid semiotics salvia tilde brunch. " +
+            "PBR&B whatever pour-over chia craft beer, small batch biodiesel Pitchfork Blue Bottle " +
+            "Schlitz pug tilde mumblecore. Truffaut deep v crucifix 8-bit, Schlitz hella " +
+            "American Apparel fanny pack forage ennui chillwave meh Wes Anderson plaid umami. " +
+            "Mustache Banksy polaroid lomo. Vinyl disrupt sustainable food truck dreamcatcher " +
+            "cornhole. Banksy Pitchfork vinyl farm-to-table pork belly. Actually cred kale chips " +
+            "Portland viral pour-over."
         }
-      ],
-    display: function(){}
+
+      ]
 };
 
 var projects = {
     "projects": [{
         "title": "mploir",
-        "dates": "02/01/2015,03/01/2015",
-        "description": "building the future of unemployment",
-        "images": "http://lorempixel.com/400/100/",
-        },
-        {
-            "title": "Small Business Enviromental Home Page",
-            "dates": "08/01/2008,12/01/2013",
-            "description": "Enviromental information for small businesses ",
-            "images": "http://lorempixel.com/400/100/"
-        }],
-    display: function(){}
+        "dates": "02/01/2015 - Future",
+        "description": "Trust fund chia Williamsburg beard, bespoke Bushwick twee chambray hoodie swag " +
+        "tattooed aesthetic Marfa squid. Bespoke banjo skateboard, tilde keffiyeh bicycle rights Odd Future " +
+        "gluten-free organic health goth mumblecore Neutra. Drinking vinegar locavore next level, distillery " +
+        "PBR&B gentrify leggings banjo food truck. Lo-fi ugh chia, yr umami meggings iPhone semiotics pickled put " +
+        "a bird on it. Pop-up Shoreditch four loko, biodiesel keffiyeh vinyl deep v wolf pork belly irony literally" +
+        " hoodie Tumblr Etsy. Synth cardigan irony pour-over Shoreditch. Chia pop-up vegan before they sold out pour-over tattooed.",
+        "images": ["http://lorempixel.com/g/200/200/", "http://lorempixel.com/200/200/sports/"]
+        },{
+        "title": "Small Business Enviromental Home Page",
+        "dates": "08/01/2008 - 12/01/2013",
+        "description": "Cliche hella hoodie artisan scenester photo booth, post-ironic bespoke chillwave " +
+        "ennui whatever. Chambray actually flannel Thundercats Portland cronut trust fund paleo, messenger bag " +
+        "Echo Park banjo vegan hashtag viral. Chia street art four dollar toast seitan, paleo Helvetica meditation DIY plaid." +
+        " Pop-up hella squid VHS, distillery organic hashtag dreamcatcher iPhone blog kogi chambray. Listicle umami brunch," +
+        " crucifix Echo Park lumbersexual farm-to-table sartorial Portland ugh. Direct trade next level aesthetic, Echo Park " +
+        "Shoreditch ennui kitsch. Meggings Tumblr direct trade, Schlitz heirloom trust fund four dollar toast church-key synth " +
+        "seitan selfies listicle.",
+        "images": ["http://lorempixel.com/200/200/", "http://lorempixel.com/g/200/200/"]
+        }]
 };
 
 var formattedName =  HTMLheaderName.replace('%data%', bio.name);
@@ -75,23 +93,34 @@ var formattedRole =  HTMLheaderRole.replace('%data%', bio.role);
 
 $("#header").prepend(formattedRole).prepend(formattedName);
 
+var topContact = $("#topContacts");
 var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
 var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
 var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
 var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
 var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
-var formattedPic = HTMLbioPic.replace("%data%", bio.biopic);
 
+var skillsStart =  HTMLskillsStart;
+var formattedPic = HTMLbioPic.replace("%data%", bio.biopic);
 var formattedWelcomeMsg = HTMLWelcomeMsg.replace("%data%", bio.welcomeMessage);
 
-$("#topContacts").append(formattedMobile).append(formattedEmail).append(formattedGithub).append(formattedTwitter).append(formattedLocation);
-$("#topContacts").next().append(formattedPic).append(formattedWelcomeMsg);
+topContact.append(formattedMobile).append(formattedEmail).append(formattedGithub).append(formattedTwitter).append(formattedLocation);
 
+$(skillsStart).insertAfter(topContact);
+
+$(formattedPic).insertBefore($("#skillsH3"));
+
+$(formattedWelcomeMsg).insertBefore("#skillsH3");
+
+for(var skill in bio.skills) {
+
+    var formattedSkills = HTMLskills.replace("%data%", bio.skills[skill]);
+    $("#skills").append(formattedSkills);
+}
 
 for(var job in work.jobs) {
 
     $("#workExperience").append(HTMLworkStart);
-
     var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
     var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
     var formattedEmployerTitle = formattedEmployer + formattedTitle;
@@ -100,11 +129,11 @@ for(var job in work.jobs) {
     var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
     $(".work-entry:last").append(formattedDates);
 
-    var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
-    $(".work-entry:last").append(formattedDescription);
-
     var formattedWorkLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
     $(".work-entry:last").append(formattedWorkLocation);
+
+    var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
+    $(".work-entry:last").append(formattedDescription);
 }
 
 for(var project in projects.projects) {
@@ -120,7 +149,10 @@ for(var project in projects.projects) {
     var formattedProjectDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
     $(".project-entry:last").append(formattedProjectDescription);
 
-    var formattedProjectImage = HTMLprojectImage.replace("%data%", projects.projects[project].images);
+    var formattedProjectImage = HTMLprojectImage.replace("%data%", projects.projects[project].images[0]);
+    $(".project-entry:last").append(formattedProjectImage);
+
+    var formattedProjectImage = HTMLprojectImage.replace("%data%", projects.projects[project].images[1]);
     $(".project-entry:last").append(formattedProjectImage);
 }
 
@@ -147,9 +179,16 @@ for (var school in education.schools) {
 
 for(var onlineClass in education.onlineCourses) {
 
-    $("#skillsChart").append(HTMLskillsStart);
+    $(HTMLonlineClasses).insertAfter($(".education-entry:last"));
+    var formattedOnlineClassTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[onlineClass].title);
+    var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[onlineClass].school);
+    var formattedOnlineClass = formattedOnlineClassTitle + formattedOnlineSchool;
+    var formattedOnlineData = HTMLonlineDates.replace("%data%", education.onlineCourses[onlineClass].date);
+    var formattedOnlineUrl = HTMLonlineURL.replace("%data%", education.onlineCourses[onlineClass].url);
+    $(HTMLschoolStart).insertAfter($("h3"));
 
-    var formattedSkills = HTMLskills.replace("%data%", education.onlineCourses[onlineClass]);
+    $(".education-entry:last").append(formattedOnlineClass).append(formattedOnlineData).append(formattedOnlineUrl);
+
 }
 
 $("#footerContacts").append(formattedMobile).append(formattedEmail).append(formattedGithub).append(formattedTwitter).append(formattedLocation);

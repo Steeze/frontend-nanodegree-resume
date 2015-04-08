@@ -66,7 +66,7 @@ $(document).ready(function() {
     var iName = inName() || function(){};
     $('#name').html(iName);  
   });
-})
+});
 
 
 /*
