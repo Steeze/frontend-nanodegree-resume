@@ -147,8 +147,11 @@ for (var school in education.schools) {
 
 for(var onlineClass in education.onlineCourses) {
 
-    $("#")
+    $("#skillsChart").append(HTMLskillsStart);
 
-
+    var formattedSkills = HTMLskills.replace("%data%", education.onlineCourses[onlineClass]);
 }
+
+$("#footerContacts").append(formattedMobile).append(formattedEmail).append(formattedGithub).append(formattedTwitter).append(formattedLocation);
+$("#footerContacts").next().append(formattedPic).append(formattedWelcomeMsg);
 
