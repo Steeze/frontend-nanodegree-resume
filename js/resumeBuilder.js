@@ -8,7 +8,7 @@ var bio = {
         "email": "erichschutz@gmail.com",
         "github": "https://github.com/Steeze",
         "twitter": "@ErichSchutz",
-        "location": "Pittsburgh"
+        "location": "Pittsburgh,PA"
         },
         "welcomeMessage": "Do you see any Teletubbies in here?",
         "skills": ["C#", "Code Slinging", "Getting Rad", "Eating Pancakes"],
@@ -43,7 +43,7 @@ var bio = {
 var education = {
     "schools": [{
         "name": "University Of Pittsburgh",
-        "location": "Pittsburgh",
+        "location": "Pittsburgh, PA",
         "degree": "Bachelor of Science",
         "majors": ["Computer Science"],
         "dates": "1995 - 2001",
@@ -61,10 +61,9 @@ var education = {
             $("#education").append(HTMLschoolStart);
 
             var formattedEducation = HTMLschoolName.replace("%data%", education.schools[school].name);
-            $(".education-entry:last").append(formattedEducation);
-
             var formattedEducationDegree = HTMLschoolDegree.replace("%data%", education.schools[school].degree);
-            $(".education-entry:last").append(formattedEducationDegree);
+            var formattedCompleteEducation = formattedEducation + formattedEducationDegree;
+            $(".education-entry:last").append(formattedCompleteEducation);
 
             var formattedEducationDates = HTMLschoolDates.replace("%data%", education.schools[school].dates);
             $(".education-entry:last").append(formattedEducationDates);
@@ -95,7 +94,7 @@ var work = {
         {
             "employer": "Aesynt, Inc",
             "title": "Software Engineer",
-            "location": "Pittsburgh",
+            "location": "Pittsburgh, PA",
             "dates": "12/12/12 - Future",
             "description": "Small batch 8-bit wayfarers church-key Intelligentsia next level Wes Anderson. " +
             "American Apparel try-hard taxidermy quinoa direct trade, irony semiotics four loko. Tilde brunch " +
@@ -107,7 +106,7 @@ var work = {
         {
             "employer": "Concurrent Technology Corporation",
             "title": "Software Engineer",
-            "location": "Seattle",
+            "location": "Seattle, WA",
             "dates": "01/01/01 - 12/12/12",
             "description": "Helvetica squid semiotics salvia tilde brunch. " +
             "PBR&B whatever pour-over chia craft beer, small batch biodiesel Pitchfork Blue Bottle " +
